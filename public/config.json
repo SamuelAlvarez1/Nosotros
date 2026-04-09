@@ -1,0 +1,33 @@
+{
+  "title": "Mi amor, ¿quieres ser mi novia?",
+  "subtitle": "Un viaje a través de nuestros momentos especiales",
+  "memories": [
+    {
+      "id": 1,
+      "date": "15 de Enero, 2024",
+      "text": "Aquel primer café donde nuestras miradas se cruzaron. Sabía que eras especial desde ese momento.",
+      "imagePath": "/assets/images/memory-1.jpg",
+      "type": "photo"
+    },
+    {
+      "id": 2,
+      "date": "22 de Febrero, 2024",
+      "text": "Tu risa es mi melodía favorita. Cada momento a tu lado es un regalo.",
+      "imagePath": "/assets/stickers/sticker-1.png",
+      "type": "sticker"
+    },
+    {
+      "id": 3,
+      "date": "14 de Marzo, 2024",
+      "text": "En tus ojos veo mi futuro. Quiero construir mil recuerdos más contigo.",
+      "imagePath": "/assets/images/memory-3.jpg",
+      "type": "photo"
+    }
+  ],
+  "finalQuestion": "¿Quieres ser mi novia?",
+  "yesButtonText": "¡SÍ, quiero! 💕",
+  "noButtonText": "Mmm, no sé...",
+  "successMessage": "¡Eres la persona más especial de mi vida! 🌹✨",
+  "successSubtitle": "Gracias por decir que sí. Este es el comienzo de nuestra historia.",
+  "finalImagePath": "/assets/images/final.jpg"
+}
