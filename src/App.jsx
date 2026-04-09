@@ -13,7 +13,8 @@ function App() {
   useEffect(() => {
     const loadConfig = async () => {
       try {
-        const response = await fetch('/config.json');
+        const configPath = `${import.meta.env.BASE_URL}config.json`;
+        const response = await fetch(configPath);
         const data = await response.json();
         setConfig(data);
       } catch (error) {
