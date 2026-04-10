@@ -5,11 +5,6 @@ on:
     branches: [ master ]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -29,14 +24,19 @@ jobs:
       - name: Build project
         run: npm run build
       
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
+      - name: Copy dist to root for GitHub Pages
+        run: |
+          cp dist/index.html index.html
+          rm -rf assets stickers
+          cp -r dist/assets .
+          cp -r dist/stickers . 2>/dev/null || true
+          cp dist/config.json config.json
+          cp dist/favicon.svg favicon.svg
+          cp dist/icons.svg icons.svg
       
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: 'dist'
-      
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -m "chore: Deploy built assets" && git push)
