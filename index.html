@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +9,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -26,57 +29,57 @@
         extend: {
           fontFamily: {
             script: ['"Dancing Script"', 'cursive'],
-            sans:   ['"Quicksand"', 'sans-serif'],
+            sans: ['"Quicksand"', 'sans-serif'],
           },
           colors: {
             rose: {
-              blush:  '#f9e4e8',
-              petal:  '#f2c4ce',
-              old:    '#c08080',
-              deep:   '#a05060',
+              blush: '#f9e4e8',
+              petal: '#f2c4ce',
+              old: '#c08080',
+              deep: '#a05060',
             },
           },
           keyframes: {
             float: {
               '0%, 100%': { transform: 'translateY(0px)' },
-              '50%':      { transform: 'translateY(-12px)' },
+              '50%': { transform: 'translateY(-12px)' },
             },
             floatAlt: {
               '0%, 100%': { transform: 'translateY(0px) rotate(-3deg)' },
-              '50%':      { transform: 'translateY(-8px) rotate(3deg)' },
+              '50%': { transform: 'translateY(-8px) rotate(3deg)' },
             },
             fadeInUp: {
-              '0%':   { opacity: '0', transform: 'translateY(40px) scale(0.95)' },
+              '0%': { opacity: '0', transform: 'translateY(40px) scale(0.95)' },
               '100%': { opacity: '1', transform: 'translateY(0)   scale(1)' },
             },
             heartbeat: {
               '0%, 100%': { transform: 'scale(1)' },
-              '14%':      { transform: 'scale(1.15)' },
-              '28%':      { transform: 'scale(1)' },
-              '42%':      { transform: 'scale(1.1)' },
-              '70%':      { transform: 'scale(1)' },
+              '14%': { transform: 'scale(1.15)' },
+              '28%': { transform: 'scale(1)' },
+              '42%': { transform: 'scale(1.1)' },
+              '70%': { transform: 'scale(1)' },
             },
             drift: {
-              '0%':   { transform: 'translateY(100vh) rotate(0deg)',   opacity: '0' },
-              '10%':  { opacity: '0.6' },
-              '90%':  { opacity: '0.3' },
+              '0%': { transform: 'translateY(100vh) rotate(0deg)', opacity: '0' },
+              '10%': { opacity: '0.6' },
+              '90%': { opacity: '0.3' },
               '100%': { transform: 'translateY(-10vh) rotate(720deg)', opacity: '0' },
             },
             shimmer: {
-              '0%':   { backgroundPosition: '-200% center' },
-              '100%': { backgroundPosition:  '200% center' },
+              '0%': { backgroundPosition: '-200% center' },
+              '100%': { backgroundPosition: '200% center' },
             },
             pulseGlow: {
               '0%, 100%': { boxShadow: '0 0 12px 2px rgba(192, 128, 128, 0.3)' },
-              '50%':      { boxShadow: '0 0 28px 8px rgba(192, 128, 128, 0.6)' },
+              '50%': { boxShadow: '0 0 28px 8px rgba(192, 128, 128, 0.6)' },
             },
           },
           animation: {
-            'float':      'float 4s ease-in-out infinite',
-            'float-alt':  'floatAlt 5s ease-in-out infinite',
+            'float': 'float 4s ease-in-out infinite',
+            'float-alt': 'floatAlt 5s ease-in-out infinite',
             'float-slow': 'float 7s ease-in-out infinite',
             'fade-in-up': 'fadeInUp 0.7s ease-out forwards',
-            'heartbeat':  'heartbeat 1.5s ease-in-out infinite',
+            'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
             'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
           },
         },
@@ -86,21 +89,44 @@
 
   <style>
     /* ─── Base ───────────────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; }
-    html { font-family: 'Quicksand', sans-serif; }
-    body { overflow-x: hidden; background-color: #fdf6f8; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: #fdf6f8;
+    }
 
     /* ─── Scrollbar personalizado ────────────────────────────────────── */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #fdf6f8; }
-    ::-webkit-scrollbar-thumb { background: #f2c4ce; border-radius: 10px; }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #fdf6f8;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #f2c4ce;
+      border-radius: 10px;
+    }
 
     /* ─── Partículas de fondo (corazones CSS puro) ───────────────────── */
     .particle-container {
-      position: fixed; inset: 0;
-      pointer-events: none; z-index: 0;
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
       overflow: hidden;
     }
+
     .particle {
       position: absolute;
       bottom: -40px;
@@ -109,47 +135,169 @@
       opacity: 0;
       will-change: transform, opacity;
     }
+
     /* 20 partículas con posiciones y duraciones variadas */
-    .p1  { left:  4%; animation-duration: 12s; animation-delay:  0s;   font-size:14px; }
-    .p2  { left:  9%; animation-duration: 18s; animation-delay:  3s;   font-size:10px; }
-    .p3  { left: 15%; animation-duration: 14s; animation-delay:  1s;   font-size:16px; }
-    .p4  { left: 22%; animation-duration: 20s; animation-delay:  7s;   font-size: 9px; }
-    .p5  { left: 28%; animation-duration: 11s; animation-delay:  2s;   font-size:18px; }
-    .p6  { left: 34%; animation-duration: 16s; animation-delay:  5s;   font-size:12px; }
-    .p7  { left: 41%; animation-duration: 13s; animation-delay:  9s;   font-size:15px; }
-    .p8  { left: 48%; animation-duration: 19s; animation-delay:  0.5s; font-size:11px; }
-    .p9  { left: 54%; animation-duration: 15s; animation-delay:  4s;   font-size:17px; }
-    .p10 { left: 61%; animation-duration: 10s; animation-delay:  6s;   font-size:13px; }
-    .p11 { left: 67%; animation-duration: 17s; animation-delay:  1.5s; font-size:10px; }
-    .p12 { left: 73%; animation-duration: 12s; animation-delay:  8s;   font-size:16px; }
-    .p13 { left: 79%; animation-duration: 21s; animation-delay:  2.5s; font-size: 9px; }
-    .p14 { left: 85%; animation-duration: 14s; animation-delay:  3.5s; font-size:18px; }
-    .p15 { left: 91%; animation-duration: 16s; animation-delay:  0s;   font-size:12px; }
-    .p16 { left:  7%; animation-duration: 22s; animation-delay:  6.5s; font-size:14px; }
-    .p17 { left: 19%; animation-duration: 13s; animation-delay:  4.5s; font-size:16px; }
-    .p18 { left: 37%; animation-duration: 18s; animation-delay:  1s;   font-size:11px; }
-    .p19 { left: 58%; animation-duration: 11s; animation-delay:  7.5s; font-size:15px; }
-    .p20 { left: 76%; animation-duration: 20s; animation-delay:  3s;   font-size:13px; }
+    .p1 {
+      left: 4%;
+      animation-duration: 12s;
+      animation-delay: 0s;
+      font-size: 14px;
+    }
+
+    .p2 {
+      left: 9%;
+      animation-duration: 18s;
+      animation-delay: 3s;
+      font-size: 10px;
+    }
+
+    .p3 {
+      left: 15%;
+      animation-duration: 14s;
+      animation-delay: 1s;
+      font-size: 16px;
+    }
+
+    .p4 {
+      left: 22%;
+      animation-duration: 20s;
+      animation-delay: 7s;
+      font-size: 9px;
+    }
+
+    .p5 {
+      left: 28%;
+      animation-duration: 11s;
+      animation-delay: 2s;
+      font-size: 18px;
+    }
+
+    .p6 {
+      left: 34%;
+      animation-duration: 16s;
+      animation-delay: 5s;
+      font-size: 12px;
+    }
+
+    .p7 {
+      left: 41%;
+      animation-duration: 13s;
+      animation-delay: 9s;
+      font-size: 15px;
+    }
+
+    .p8 {
+      left: 48%;
+      animation-duration: 19s;
+      animation-delay: 0.5s;
+      font-size: 11px;
+    }
+
+    .p9 {
+      left: 54%;
+      animation-duration: 15s;
+      animation-delay: 4s;
+      font-size: 17px;
+    }
+
+    .p10 {
+      left: 61%;
+      animation-duration: 10s;
+      animation-delay: 6s;
+      font-size: 13px;
+    }
+
+    .p11 {
+      left: 67%;
+      animation-duration: 17s;
+      animation-delay: 1.5s;
+      font-size: 10px;
+    }
+
+    .p12 {
+      left: 73%;
+      animation-duration: 12s;
+      animation-delay: 8s;
+      font-size: 16px;
+    }
+
+    .p13 {
+      left: 79%;
+      animation-duration: 21s;
+      animation-delay: 2.5s;
+      font-size: 9px;
+    }
+
+    .p14 {
+      left: 85%;
+      animation-duration: 14s;
+      animation-delay: 3.5s;
+      font-size: 18px;
+    }
+
+    .p15 {
+      left: 91%;
+      animation-duration: 16s;
+      animation-delay: 0s;
+      font-size: 12px;
+    }
+
+    .p16 {
+      left: 7%;
+      animation-duration: 22s;
+      animation-delay: 6.5s;
+      font-size: 14px;
+    }
+
+    .p17 {
+      left: 19%;
+      animation-duration: 13s;
+      animation-delay: 4.5s;
+      font-size: 16px;
+    }
+
+    .p18 {
+      left: 37%;
+      animation-duration: 18s;
+      animation-delay: 1s;
+      font-size: 11px;
+    }
+
+    .p19 {
+      left: 58%;
+      animation-duration: 11s;
+      animation-delay: 7.5s;
+      font-size: 15px;
+    }
+
+    .p20 {
+      left: 76%;
+      animation-duration: 20s;
+      animation-delay: 3s;
+      font-size: 13px;
+    }
 
     /* ─── Polaroid ───────────────────────────────────────────────────── */
     .polaroid {
       background: #fff;
       padding: 12px 12px 48px 12px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.07);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10), 0 1px 4px rgba(0, 0, 0, 0.07);
       border: 1px solid #f0e0e4;
       display: inline-block;
-      transition: transform 0.35s cubic-bezier(.22,1,.36,1),
-                  box-shadow 0.35s ease;
+      transition: transform 0.35s cubic-bezier(.22, 1, .36, 1),
+        box-shadow 0.35s ease;
       cursor: pointer;
       position: relative;
       -webkit-tap-highlight-color: transparent;
       user-select: none;
     }
+
     .polaroid:hover {
       transform: scale(1.05) rotate(0deg) !important;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.09);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.09);
       z-index: 10;
     }
+
     .polaroid img {
       width: 100%;
       aspect-ratio: 1 / 1;
@@ -158,9 +306,11 @@
       border-radius: 2px;
       transition: opacity 0.3s ease;
     }
-    .polaroid.open > img {
+
+    .polaroid.open>img {
       opacity: 0.12;
     }
+
     .polaroid .caption {
       font-family: 'Dancing Script', cursive;
       font-size: 1.1rem;
@@ -183,10 +333,11 @@
       padding: 16px 14px;
       opacity: 0;
       transform: scale(0.93);
-      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(.22,1,.36,1);
+      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(.22, 1, .36, 1);
       pointer-events: none;
       border-radius: 2px;
     }
+
     .polaroid.open .polaroid-detail {
       opacity: 1;
       transform: scale(1);
@@ -197,7 +348,7 @@
     .sticker img {
       width: 100%;
       object-fit: contain;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.12));
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.12));
     }
 
     /* ─── Scroll reveal ──────────────────────────────────────────────── */
@@ -206,6 +357,7 @@
       transform: translateY(40px) scale(0.96);
       transition: opacity 0.65s ease, transform 0.65s ease;
     }
+
     .reveal.visible {
       opacity: 1;
       transform: translateY(0) scale(1);
@@ -213,10 +365,8 @@
 
     /* ─── Shimmer text ───────────────────────────────────────────────── */
     .shimmer-text {
-      background: linear-gradient(
-        90deg,
-        #c08080 0%, #e8a0a0 30%, #c08080 50%, #a05060 70%, #c08080 100%
-      );
+      background: linear-gradient(90deg,
+          #c08080 0%, #e8a0a0 30%, #c08080 50%, #a05060 70%, #c08080 100%);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -226,25 +376,34 @@
 
     /* ─── Separador de corazones ─────────────────────────────────────── */
     .heart-divider {
-      display: flex; align-items: center; gap: 12px;
-      margin: 2.5rem auto; max-width: 340px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 2.5rem auto;
+      max-width: 340px;
     }
+
     .heart-divider::before,
     .heart-divider::after {
-      content: ''; flex: 1;
+      content: '';
+      flex: 1;
       height: 1px;
       background: linear-gradient(to right, transparent, #f2c4ce);
     }
+
     .heart-divider::after {
       background: linear-gradient(to left, transparent, #f2c4ce);
     }
 
     /* ─── Modal confetti overlay ─────────────────────────────────────── */
     .modal-overlay {
-      position: fixed; inset: 0;
+      position: fixed;
+      inset: 0;
       background: rgba(253, 246, 248, 0.92);
       backdrop-filter: blur(6px);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       z-index: 1000;
       animation: fadeInUp 0.5s ease-out;
     }
@@ -260,11 +419,15 @@
       cursor: pointer;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
     .btn-yes:hover {
       transform: scale(1.07);
-      box-shadow: 0 8px 28px rgba(160,80,96,0.4);
+      box-shadow: 0 8px 28px rgba(160, 80, 96, 0.4);
     }
-    .btn-yes:active { transform: scale(0.97); }
+
+    .btn-yes:active {
+      transform: scale(0.97);
+    }
 
     /* ─── Botón No ───────────────────────────────────────────────────── */
     .btn-no {
@@ -276,11 +439,15 @@
       background: white;
       transition: opacity 0.2s ease;
     }
-    .btn-no:active { opacity: 0.7; }
+
+    .btn-no:active {
+      opacity: 0.7;
+    }
 
     /* ─── Timeline vertical ──────────────────────────────────────────── */
     .timeline-dot {
-      width: 14px; height: 14px;
+      width: 14px;
+      height: 14px;
       background: #c08080;
       border-radius: 50%;
       border: 3px solid #fdf6f8;
@@ -293,11 +460,8 @@
 <!-- ═══════════════════════════════════════════════════════════════════
      ALPINE.JS ROOT — todo el estado de la app vive aquí
 ════════════════════════════════════════════════════════════════════ -->
-<body
-  x-data="appData()"
-  x-init="init()"
-  class="min-h-screen bg-[#fdf6f8] font-sans text-gray-800"
->
+
+<body x-data="appData()" x-init="init()" class="min-h-screen bg-[#fdf6f8] font-sans text-gray-800">
 
   <!-- ── Partículas de fondo ──────────────────────────────────────── -->
   <div class="particle-container" aria-hidden="true">
@@ -330,35 +494,32 @@
 
     <!-- Frase de apertura -->
     <p class="font-script text-rose-old text-xl md:text-3xl mb-3 opacity-0 animate-fade-in-up"
-       style="animation-delay:0.1s; animation-fill-mode:forwards;">
+      style="animation-delay:0.1s; animation-fill-mode:forwards;">
       Para ti...
     </p>
 
     <!-- Nombre principal con shimmer -->
     <h1 class="shimmer-text font-script text-7xl md:text-8xl font-bold leading-tight mb-5
-               opacity-0 animate-fade-in-up"
-        style="animation-delay:0.4s; animation-fill-mode:forwards;"
-        x-text="nombrePareja">
+               opacity-0 animate-fade-in-up" style="animation-delay:0.4s; animation-fill-mode:forwards;"
+      x-text="nombrePareja">
     </h1>
 
     <!-- Corazón animado -->
     <div class="text-5xl my-3 opacity-0"
-         style="animation: heartbeat 1.5s ease-in-out infinite, fadeInUp 0.7s 0.7s ease-out forwards; animation-fill-mode:forwards;">
+      style="animation: heartbeat 1.5s ease-in-out infinite, fadeInUp 0.7s 0.7s ease-out forwards; animation-fill-mode:forwards;">
       ♡
     </div>
 
     <!-- Intro text -->
     <p class="font-sans text-gray-600 text-base md:text-xl max-w-sm md:max-w-lg leading-relaxed
-              opacity-0 animate-fade-in-up px-2"
-       style="animation-delay:1s; animation-fill-mode:forwards;"
-       x-text="introText">
+              opacity-0 animate-fade-in-up px-2" style="animation-delay:1s; animation-fill-mode:forwards;"
+      x-text="introText">
     </p>
 
     <!-- Indicador scroll — fixed al fondo de la pantalla, siempre centrado -->
     <div class="fixed bottom-8 inset-x-0 flex flex-col items-center gap-1 pointer-events-none
-                opacity-0 animate-fade-in-up z-20"
-         style="animation-delay:1.6s; animation-fill-mode:forwards;"
-         x-show="!respondio">
+                opacity-0 animate-fade-in-up z-20" style="animation-delay:1.6s; animation-fill-mode:forwards;"
+      x-show="!respondio">
       <span class="font-script text-rose-old text-sm drop-shadow-sm">sigue leyendo</span>
       <div class="w-px h-8 bg-gradient-to-b from-rose-300 to-transparent animate-float"></div>
       <span class="text-rose-300 text-base animate-float" style="animation-delay:0.3s">↓</span>
@@ -377,24 +538,22 @@
     <h2 class="font-script text-rose-old text-4xl md:text-5xl text-center mb-4 reveal">
       Nuestros momentos
     </h2>
-    <p class="font-sans text-gray-500 text-center mb-16 text-base md:text-lg reveal"
-       style="transition-delay:0.1s">
+    <p class="font-sans text-gray-500 text-center mb-16 text-base md:text-lg reveal" style="transition-delay:0.1s">
       Cada foto guarda un pedacito de mi sonrisa favorita.
     </p>
 
     <!-- Grid: 1 col en móvil, 2 en tablet, 3 en desktop -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 items-start max-w-sm sm:max-w-none mx-auto">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 items-start max-w-sm sm:max-w-none mx-auto">
       <template x-for="(item, index) in recuerdos" :key="index">
 
         <!-- POLAROID -->
-        <div x-show="item.tipo === 'foto'"
-             class="polaroid reveal"
-             :class="[
+        <div x-show="item.tipo === 'foto'" class="polaroid reveal" :class="[
                item.abierto ? 'open' : '',
                index % 3 === 0 ? 'mt-8' : index % 3 === 1 ? 'mt-0' : 'mt-4'
              ]"
-             :style="`transform: rotate(${item.abierto ? 0 : item.rotacion}deg); transition-delay: ${index * 0.08}s`"
-             @click="item.abierto = !item.abierto">
+          :style="`transform: rotate(${item.abierto ? 0 : item.rotacion}deg); transition-delay: ${index * 0.08}s`"
+          @click="item.abierto = !item.abierto">
 
           <img :src="item.url" :alt="item.tituloPolaroid" loading="lazy" />
 
@@ -404,26 +563,19 @@
           <!-- Panel de detalle — visible al hacer clic -->
           <div class="polaroid-detail">
             <span class="text-xl leading-none text-rose-300">♡</span>
-            <p class="font-sans text-gray-700 text-sm text-center leading-snug px-1"
-               x-text="item.descripcion"></p>
-            <p class="font-script text-rose-old text-base"
-               x-text="item.fecha"></p>
+            <p class="font-sans text-gray-700 text-sm text-center leading-snug px-1" x-text="item.descripcion"></p>
+            <p class="font-script text-rose-old text-base" x-text="item.fecha"></p>
             <span class="text-gray-300 text-xs mt-1">toca para cerrar</span>
           </div>
         </div>
 
         <!-- STICKER -->
-        <div x-show="item.tipo === 'sticker'"
-             class="sticker reveal flex items-center justify-center p-2"
-             :style="`transition-delay: ${index * 0.08}s`"
-             :class="[
+        <div x-show="item.tipo === 'sticker'" class="sticker reveal flex items-center justify-center p-2"
+          :style="`transition-delay: ${index * 0.08}s`" :class="[
                index % 2 === 0 ? 'animate-float' : 'animate-float-alt',
                index % 3 === 0 ? 'mt-6' : 'mt-2'
              ]">
-          <img :src="item.url"
-               :alt="item.descripcion"
-               class="w-24 h-24 md:w-32 md:h-32"
-               loading="lazy" />
+          <img :src="item.url" :alt="item.descripcion" class="w-24 h-24 md:w-32 md:h-32" loading="lazy" />
         </div>
 
       </template>
@@ -445,7 +597,8 @@
 
     <div class="relative">
       <!-- Línea vertical -->
-      <div class="absolute left-[6px] top-0 bottom-0 w-px bg-gradient-to-b from-rose-200 via-rose-300 to-transparent"></div>
+      <div class="absolute left-[6px] top-0 bottom-0 w-px bg-gradient-to-b from-rose-200 via-rose-300 to-transparent">
+      </div>
 
       <template x-for="(razon, i) in razones" :key="i">
         <div class="relative flex gap-6 mb-10 reveal" :style="`transition-delay:${i*0.1}s`">
@@ -462,19 +615,16 @@
   <!-- ═══════════════════════════════════════════════════════════════
        SECCIÓN 4 — LA PREGUNTA
   ════════════════════════════════════════════════════════════════ -->
-  <section x-show="!respondio"
-           class="relative z-10 py-16 px-6 text-center max-w-xl mx-auto"
-           x-transition:leave="transition ease-in duration-300"
-           x-transition:leave-start="opacity-100"
-           x-transition:leave-end="opacity-0">
+  <section x-show="!respondio" class="relative z-10 py-16 px-6 text-center max-w-xl mx-auto"
+    x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0">
 
     <div class="heart-divider">
       <span class="font-script text-rose-old text-2xl animate-heartbeat">♡</span>
     </div>
 
     <h2 class="font-script text-rose-old text-4xl md:text-6xl mb-3 reveal animate-pulse-glow"
-        style="transition-delay:0.1s"
-        x-text="preguntaFinal">
+      style="transition-delay:0.1s" x-text="preguntaFinal">
     </h2>
 
     <p class="text-gray-400 font-sans text-sm mb-10 reveal" style="transition-delay:0.2s">
@@ -482,21 +632,17 @@
     </p>
 
     <!-- Contenedor del botón No — más alto en móvil para que tenga espacio de escapar -->
-    <div class="relative w-full h-40 sm:h-28 reveal"
-         style="transition-delay:0.3s">
+    <div class="relative w-full h-40 sm:h-28 reveal" style="transition-delay:0.3s">
 
       <!-- Botón SÍ — centrado fijo -->
-      <button
-        @click="aceptar()"
+      <button @click="aceptar()"
         class="btn-yes absolute px-10 py-4 rounded-full text-xl shadow-lg animate-pulse-glow z-10"
         style="left:50%; top:50%; transform:translate(-50%,-50%)">
         Sí 💕
       </button>
 
       <!-- Botón NO — huye del cursor / del tap -->
-      <button
-        @mouseenter="escaparNo($event)"
-        @touchstart.prevent="escaparNo($event)"
+      <button @mouseenter="escaparNo($event)" @touchstart.prevent="escaparNo($event)"
         class="btn-no absolute px-7 py-3 rounded-full text-base z-20"
         :style="`left: ${noX}px; top: ${noY}px; transform: translate(-50%, -50%);`">
         No
@@ -504,9 +650,7 @@
     </div>
 
     <!-- Contador de intentos -->
-    <p x-show="intentos > 0"
-       class="mt-8 font-script text-rose-old text-lg md:text-xl animate-fade-in-up"
-       x-transition>
+    <p x-show="intentos > 0" class="mt-8 font-script text-rose-old text-lg md:text-xl animate-fade-in-up" x-transition>
       <span x-text="mensajeIntentos()"></span>
     </p>
   </section>
@@ -514,11 +658,8 @@
   <!-- ═══════════════════════════════════════════════════════════════
        MODAL DE ÉXITO
   ════════════════════════════════════════════════════════════════ -->
-  <div x-show="respondio"
-       class="modal-overlay"
-       x-transition:enter="transition ease-out duration-500"
-       x-transition:enter-start="opacity-0 scale-95"
-       x-transition:enter-end="opacity-100 scale-100">
+  <div x-show="respondio" class="modal-overlay" x-transition:enter="transition ease-out duration-500"
+    x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100">
 
     <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-14 max-w-md w-full mx-4 text-center
                 border border-rose-100 relative overflow-hidden max-h-[90vh] overflow-y-auto">
@@ -537,8 +678,7 @@
 
       <div class="text-5xl animate-heartbeat mb-4">💕</div>
 
-      <h3 class="font-script text-rose-old text-4xl md:text-5xl mb-3"
-          x-text="mensajeAceptacion">
+      <h3 class="font-script text-rose-old text-4xl md:text-5xl mb-3" x-text="mensajeAceptacion">
       </h3>
 
       <p class="text-gray-500 font-sans text-base leading-relaxed mt-2">
@@ -564,167 +704,182 @@
           {
             tipo: 'foto',
             url: 'assets/1.jpg',
-            tituloPolaroid: 'el principio de todo ♡',
+            tituloPolaroid: 'Un mirador muy frío',
             descripcion: 'El día que todo empezó. Recuerdo exactamente cómo te veías.',
-            fecha: '',
-          },
-          {
-            tipo: 'sticker',
-            url: 'https://em-content.zobj.net/source/apple/354/sparkling-heart_1f496.png',
-            tituloPolaroid: '', descripcion: '', fecha: '',
+            fecha: '7 de marzo, 2026',
           },
           {
             tipo: 'foto',
             url: 'assets/2.JPEG',
-            tituloPolaroid: 'riendo contigo',
+            tituloPolaroid: 'De nuestras primeras caminatas',
             descripcion: 'Tu risa es mi canción favorita. Ese día no paré de escucharla.',
-            fecha: '',
+            fecha: '20 de diciembre, 2025',
           },
           {
             tipo: 'foto',
             url: 'assets/4.JPEG',
-            tituloPolaroid: 'nuestra aventura',
+            tituloPolaroid: 'Bajo el sol',
             descripcion: 'Perdidos y felices. Con vos cualquier lugar se vuelve especial.',
-            fecha: '',
+            fecha: '20 de diciembre, 2025',
           },
           {
             tipo: 'foto',
             url: 'assets/6.JPEG',
-            tituloPolaroid: 'así de bien la pasamos',
+            tituloPolaroid: 'Un mirador en pleno diciembre',
             descripcion: 'Momentos como este son los que quiero repetir para siempre.',
-            fecha: '',
-          },
-          {
-            tipo: 'sticker',
-            url: 'https://em-content.zobj.net/source/apple/354/revolving-hearts_1f49e.png',
-            tituloPolaroid: '', descripcion: '', fecha: '',
+            fecha: '25 de diciembre, 2025',
           },
           {
             tipo: 'foto',
             url: 'assets/7.JPEG',
-            tituloPolaroid: 'te quedo mirando',
+            tituloPolaroid: 'Bajo la lluvia',
             descripcion: 'No me canso de verte. Creo que nunca me voy a cansar.',
-            fecha: '',
+            fecha: '10 de enero, 2026'
           },
           {
             tipo: 'foto',
             url: 'assets/8.JPEG',
-            tituloPolaroid: 'el atardecer que me robaste el aliento',
+            tituloPolaroid: 'Unos takis y bajo el atardecer',
             descripcion: 'No sé si era el cielo o que estabas vos al lado. Creo que eras vos.',
-            fecha: '',
+            fecha: '17 de enero, 2026'
           },
           {
             tipo: 'foto',
             url: 'assets/9.JPEG',
-            tituloPolaroid: 'juntos y punto',
+            tituloPolaroid: 'Un cumpleaños muy lindo',
             descripcion: 'Con vos el tiempo pasa diferente. Más rápido y más bonito.',
-            fecha: '',
-          },
-          {
-            tipo: 'sticker',
-            url: 'https://em-content.zobj.net/source/apple/354/smiling-face-with-hearts_1f970.png',
-            tituloPolaroid: '', descripcion: '', fecha: '',
+            fecha: '31 de enero, 2026'
           },
           {
             tipo: 'foto',
             url: 'assets/10.PNG',
-            tituloPolaroid: 'este momento',
+            tituloPolaroid: 'Una videollamada ',
             descripcion: 'Hay fotos que valen más que mil palabras. Esta es una de esas.',
-            fecha: '',
+            fecha: '3 de marzo, 2026',
           },
           {
             tipo: 'foto',
             url: 'assets/11.JPEG',
-            tituloPolaroid: 'te encontré y todo cambió',
+            tituloPolaroid: 'Tiempo de calidada en cine',
             descripcion: 'A veces pienso en cómo sería mi vida sin haberte conocido. No me gusta esa versión.',
-            fecha: '',
+            fecha: '13 de marzo, 2026',
           },
           {
             tipo: 'foto',
             url: 'assets/12.JPEG',
-            tituloPolaroid: 'sonrisa de las tuyas',
+            tituloPolaroid: 'Viajecito a pueblo',
             descripcion: 'Esa sonrisa me hace querer ser mejor persona todos los días.',
             fecha: '',
           },
           {
-            tipo: 'sticker',
-            url: 'https://em-content.zobj.net/source/apple/354/sparkling-heart_1f496.png',
-            tituloPolaroid: '', descripcion: '', fecha: '',
-          },
-          {
             tipo: 'foto',
             url: 'assets/13.JPEG',
-            tituloPolaroid: 'instante favorito',
+            tituloPolaroid: 'Cada beso se siente como el primero',
             descripcion: 'Si pudiera elegir un momento para revivir, elegiría uno así.',
-            fecha: '',
+            fecha: '21 de marzo, 2026',
           },
           {
             tipo: 'foto',
             url: 'assets/14.JPEG',
-            tituloPolaroid: 'tan vos',
+            tituloPolaroid: 'Hermosa vista',
             descripcion: 'Auténtica, sin filtros. Así te quiero, exactamente como sos.',
-            fecha: '',
+            fecha: '21 de marzo, 2026',
           },
           {
             tipo: 'foto',
             url: 'assets/15.JPEG',
-            tituloPolaroid: 'mi lugar favorito',
+            tituloPolaroid: 'Te convertiste en mi lugar favorito',
             descripcion: 'Mi lugar favorito no es un lugar. Sos vos.',
-            fecha: '',
+            fecha: '22 de marzo, 2026',
           },
           {
             tipo: 'foto',
             url: 'assets/16.JPEG',
-            tituloPolaroid: 'cada momento importa',
+            tituloPolaroid: 'Calidad de foto cinematografica',
             descripcion: 'Nada de lo que vivimos juntos me parece pequeño.',
-            fecha: '',
+            fecha: '2 de abril, 2026',
           },
           {
             tipo: 'foto',
             url: 'assets/17.JPEG',
-            tituloPolaroid: 'mirándonos',
+            tituloPolaroid: 'Un delicioso pastel de pollo',
             descripcion: 'Hay una conversación entera en cada mirada tuya.',
-            fecha: '',
-          },
-          {
-            tipo: 'foto',
-            url: 'assets/18.JPEG',
-            tituloPolaroid: 'siempre vos',
-            descripcion: 'Si tuviera que elegir otra vez, te elegiría a vos.',
-            fecha: '',
+            fecha: '4 de abril, 2026',
           },
           {
             tipo: 'foto',
             url: 'assets/19.JPEG',
-            tituloPolaroid: 'nuestro mundo',
+            tituloPolaroid: 'De mis momentos favoritos contigo',
             descripcion: 'Cuando estás, el mundo se achica y se vuelve exactamente del tamaño que necesito.',
-            fecha: '',
+            fecha: '4 de abril, 2026',
           },
           {
             tipo: 'foto',
-            url: 'assets/20.JPG',
-            tituloPolaroid: 'para siempre ♡',
+            url: 'assets/20.PNG',
+            tituloPolaroid: 'Tus ojos y los atardeceres',
             descripcion: 'Esta es la última foto... pero espero que sea solo el comienzo.',
-            fecha: '',
+            fecha: '17 de enero, 2026',
           },
+          {
+            tipo: 'foto',
+            url: 'assets/21.JPEG',
+            tituloPolaroid: 'Momentos juntos patinando',
+            descripcion: 'Esta es la última foto... pero espero que sea solo el comienzo.',
+            fecha: '21 de enero, 2026',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/22.JPEG',
+            tituloPolaroid: 'Una ciclovia solo para nosotros',
+            descripcion: 'Esta es la última foto... pero espero que sea solo el comienzo.',
+            fecha: '5 de marzo, 2026',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/23.JPEG',
+            tituloPolaroid: '✌️',
+            descripcion: '✌️',
+            fecha: '5 de marzo, 2026',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/24.JPEG',
+            tituloPolaroid: 'Contigo cada momento es mas especial',
+            descripcion: 'Esta es la última foto... pero espero que sea solo el comienzo.',
+            fecha: '5 de marzo, 2026',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/25.JPEG',
+            tituloPolaroid: 'Mi lugar favorito contigo',
+            descripcion: 'Esta es la última foto... pero espero que sea solo el comienzo.',
+            fecha: '5 de marzo, 2026',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/26.JPEG',
+            tituloPolaroid: 'Tu dia importante',
+            descripcion: 'Esta es la última foto... pero espero que sea solo el comienzo.',
+            fecha: '27 de febrero, 2026',
+          }
         ],
 
         razones: [
-          { titulo: 'Tu risa',          texto: 'Es el sonido más bonito que he escuchado. Podría pasarme horas solo escuchándola.' },
-          { titulo: 'Tu forma de ser',  texto: 'Eres auténtica, sin pretensiones. Contigo no hay necesidad de ser otra persona.' },
-          { titulo: 'Tu mirada',        texto: 'Hay una calidez en tus ojos que hace que todo parezca estar bien en el mundo.' },
-          { titulo: 'Tu energía',       texto: 'Entras a un lugar y lo iluminas sin darte cuenta. Eso es magia, y tú la tienes.' },
+          { titulo: 'Tu risa', texto: 'Es el sonido más bonito que he escuchado. Podría pasarme horas solo escuchándola.' },
+          { titulo: 'Tu forma de ser', texto: 'Eres auténtica, sin pretensiones. Contigo no hay necesidad de ser otra persona.' },
+          { titulo: 'Tu mirada', texto: 'Hay una calidez en tus ojos que hace que todo parezca estar bien en el mundo.' },
+          { titulo: 'Tu energía', texto: 'Entras a un lugar y lo iluminas sin darte cuenta. Eso es magia, y tú la tienes.' },
           { titulo: 'Cómo me haces sentir', texto: 'Contigo soy la mejor versión de mí mismo. Eso es lo más valioso que alguien puede darte.' },
         ],
 
-        preguntaFinal:     '¿Quieres ser mi novia?',
-        mensajeAceptacion: '¡Dijo que sí! 💕',
+        preguntaFinal: '¿Puedo ser tu novio?',
+        mensajeAceptacion: '¡Dijo que sí! ',
 
         fotoFinal: 'assets/20.JPG',
 
         /* ── ESTADO INTERNO ─────────────────────────────────────── */
         respondio: false,
-        intentos:  0,
+        intentos: 0,
         noX: 0,
         noY: 0,
 
@@ -766,7 +921,7 @@
           this.intentos++;
           const container = event.target.closest('.relative');
           if (!container) return;
-          const w = container.offsetWidth  || 300;
+          const w = container.offsetWidth || 300;
           const h = container.offsetHeight || 160;
           const padding = 50; // margen mínimo desde los bordes
 
@@ -784,7 +939,7 @@
           } while (
             tries < 20 &&
             (Math.hypot(newX - cx, newY - cy) < 80 ||
-             Math.hypot(newX - this.noX, newY - this.noY) < 50)
+              Math.hypot(newX - this.noX, newY - this.noY) < 50)
           );
 
           this.noX = Math.round(newX);
@@ -848,8 +1003,8 @@
            Cada rango de intentos muestra un mensaje distinto.
         ─────────────────────────────────────────────────────────── */
         mensajeIntentos() {
-          if (this.intentos < 3)  return '¿Ese botón se fue solo? Qué raro... 🤔';
-          if (this.intentos < 6)  return 'Parece que el "No" no quiere que lo elijas 😏';
+          if (this.intentos < 3) return '¿Ese botón se fue solo? Qué raro... 🤔';
+          if (this.intentos < 6) return 'Parece que el "No" no quiere que lo elijas 😏';
           if (this.intentos < 10) return 'El universo está tratando de decirte algo... 💫';
           if (this.intentos < 15) return '¡Perseverancia! Pero quizás hay una pista 😄';
           return 'Okay, creo que el "No" decidió irse de vacaciones 🏖️';
@@ -859,4 +1014,5 @@
   </script>
 
 </body>
+
 </html>
