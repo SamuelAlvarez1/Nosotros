@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para ti, con todo mi corazón 💕</title>
+  <title>Samuel y Vale 💕</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -495,11 +495,11 @@
     <!-- Frase de apertura -->
     <p class="font-script text-rose-old text-xl md:text-3xl mb-3 opacity-0 animate-fade-in-up"
       style="animation-delay:0.1s; animation-fill-mode:forwards;">
-      Para ti...
+      Colección
     </p>
 
     <!-- Nombre principal con shimmer -->
-    <h1 class="shimmer-text font-script text-7xl md:text-8xl font-bold leading-tight mb-5
+    <h1 class="shimmer-text font-script text-7xl p-5 md:text-8xl font-bold leading-tight mb-5
                opacity-0 animate-fade-in-up" style="animation-delay:0.4s; animation-fill-mode:forwards;"
       x-text="nombrePareja">
     </h1>
@@ -623,13 +623,11 @@
       <span class="font-script text-rose-old text-2xl animate-heartbeat">♡</span>
     </div>
 
-    <h2 class="font-script text-rose-old text-4xl md:text-6xl mb-3 reveal animate-pulse-glow"
+    <h2 class="font-script text-rose-old rounded-3xl text-4xl md:text-6xl mb-3 py-5 reveal animate-pulse-glow"
       style="transition-delay:0.1s" x-text="preguntaFinal">
     </h2>
 
-    <p class="text-gray-400 font-sans text-sm mb-10 reveal" style="transition-delay:0.2s">
-      (piénsalo bien... aunque ya sé tu respuesta 😊)
-    </p>
+    
 
     <!-- Contenedor del botón No — más alto en móvil para que tenga espacio de escapar -->
     <div class="relative w-full h-40 sm:h-28 reveal" style="transition-delay:0.3s">
@@ -638,7 +636,7 @@
       <button @click="aceptar()"
         class="btn-yes absolute px-10 py-4 rounded-full text-xl shadow-lg animate-pulse-glow z-10"
         style="left:50%; top:50%; transform:translate(-50%,-50%)">
-        Sí 💕
+        Sí 
       </button>
 
       <!-- Botón NO — huye del cursor / del tap -->
@@ -665,24 +663,24 @@
                 border border-rose-100 relative overflow-hidden max-h-[90vh] overflow-y-auto">
 
       <!-- Destellos decorativos -->
-      <div class="absolute top-4 left-4 text-3xl animate-float">✦</div>
-      <div class="absolute top-4 right-4 text-3xl animate-float-alt">✦</div>
+      <div class="absolute top-4 left-4 text-3xl animate-float">♡</div>
+      <div class="absolute top-4 right-4 text-3xl animate-float-alt">♡</div>
       <div class="absolute bottom-4 left-8 text-2xl animate-float-slow">♡</div>
       <div class="absolute bottom-4 right-8 text-2xl animate-float" style="animation-delay:1s">♡</div>
 
       <!-- Foto final -->
       <div class="polaroid mx-auto mb-6 max-w-[220px]" style="transform: rotate(-1deg)">
         <img :src="fotoFinal" alt="Nosotros" />
-        <p class="caption">para siempre ♡</p>
+        <p class="caption">Tu y yo ♡</p>
       </div>
 
-      <div class="text-5xl animate-heartbeat mb-4">💕</div>
+      <div class="text-5xl animate-heartbeat mb-4">❤️</div>
 
       <h3 class="font-script text-rose-old text-4xl md:text-5xl mb-3" x-text="mensajeAceptacion">
       </h3>
 
       <p class="text-gray-500 font-sans text-base leading-relaxed mt-2">
-        Este momento lo voy a guardar para siempre en mi corazón.
+        Esta pagina quedará para siempre como un recuerdo nuestro.
       </p>
 
     </div>
@@ -696,9 +694,9 @@
       return {
 
         /* ── CONFIGURACIÓN — EDITA AQUÍ ──────────────────────────── */
-        nombrePareja: 'Vale',
+        nombrePareja: 'Vale y Samuel',
 
-        introText: 'Hay personas que llegan a tu vida y la hacen más bonita sin siquiera intentarlo. Tú eres esa persona para mí.',
+        introText: 'Quise usar lo que sé y me gusta hacer para decirte lo que siento. Me tomé el tiempo de programar y diseñar este sitio para plasmar nuestros recuerdos más especiales, desde esas fotos que me encantan hasta los motivos por los que siento que nuestra conexión es única. Es un recorrido por lo que hemos vivido juntos y una promesa de que lo mejor aún está por venir.',
 
         recuerdos: [
           {
@@ -714,6 +712,13 @@
             tituloPolaroid: 'Bajo el sol',
             descripcion: 'Ni el sol tan fuerte de ese día pudo dañar mi animo de estar junto a ti (sé que te querías quedar). ',
             fecha: '20 de diciembre, 2025',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/25.JPEG',
+            tituloPolaroid: 'Mi lugar favorito contigo',
+            descripcion: 'Hay lugares a los que uno quiere volver siempre. Contigo un lago, unos pinos y comida rica pasaron a otro nivel.',
+            fecha: '21 de diciembre, 2026',
           },
           {
             tipo: 'foto',
@@ -768,7 +773,7 @@
             tipo: 'foto',
             url: 'assets/10.PNG',
             tituloPolaroid: 'Una videollamada',
-            descripcion: 'Y si un día no te puedo ver, quiero que siga siendo una pantalla con tu rostro la que me haga sonreir por horas.',
+            descripcion: 'Si un día no te puedo ver por la distancia, quiero que siga siendo una pantalla con tu rostro la que me haga sonreir por horas.',
             fecha: '3 de marzo, 2026',
           },
           {
@@ -787,10 +792,10 @@
           },
           {
             tipo: 'foto',
-            url: 'assets/25.JPEG',
-            tituloPolaroid: 'Mi lugar favorito contigo',
-            descripcion: 'Hay lugares a los que uno quiere volver siempre. Contigo un lago, unos pinos y comida rica pasaron a otro nivel.',
-            fecha: '5 de marzo, 2026',
+            url: 'assets/1.jpg',
+            tituloPolaroid: 'Un mirador muy frío',
+            descripcion: 'Aunque el frio me estuviera haciendo temblar, verte calientita y abrazarte me acaloraba el corazón.',
+            fecha: '7 de marzo, 2026',
           },
           {
             tipo: 'foto',
@@ -817,7 +822,7 @@
             tipo: 'foto',
             url: 'assets/14.JPEG',
             tituloPolaroid: 'Hermosa vista',
-            descripcion: 'Aunque el postre y las bebidas estaban deliciosas, tomar tu mano y estar juntos ante esas vista fue lo mejor.',
+            descripcion: 'Aunque el postre y las bebidas estaban deliciosas, estar juntos ante esa vista fue lo mejor del momento.',
             fecha: '21 de marzo, 2026',
           },
           {
@@ -826,13 +831,6 @@
             tituloPolaroid: 'Te convertiste en mi lugar favorito',
             descripcion: 'Tus manos, tus abrazos, tu olor, tus labios, tus palabras, cualquier cosa de ti, se convirtió en mi lugar y mi plan favorito.',
             fecha: '22 de marzo, 2026',
-          },
-          {
-            tipo: 'foto',
-            url: 'assets/1.jpg',
-            tituloPolaroid: 'Un mirador muy frío',
-            descripcion: 'Aunque el frio me estuviera haciendo temblar, verte calientita y abrazarte me acalora el corazón.',
-            fecha: '7 de marzo, 2026',
           },
           {
             tipo: 'foto',
@@ -865,15 +863,21 @@
         ],
 
         razones: [
-          { titulo: 'Tu risa', texto: 'Es el sonido más bonito que he escuchado. Podría pasarme horas solo escuchándola.' },
-          { titulo: 'Tu forma de ser', texto: 'Eres auténtica, sin pretensiones. Contigo no hay necesidad de ser otra persona.' },
-          { titulo: 'Tu mirada', texto: 'Hay una calidez en tus ojos que hace que todo parezca estar bien en el mundo.' },
-          { titulo: 'Tu energía', texto: 'Entras a un lugar y lo iluminas sin darte cuenta. Eso es magia, y tú la tienes.' },
-          { titulo: 'Cómo me haces sentir', texto: 'Contigo soy la mejor versión de mí mismo. Eso es lo más valioso que alguien puede darte.' },
-        ],
+        { titulo: 'Tus ojos',                       texto: 'Podrìa estar dias seguidos solo disfrutando de lo linda que es tu mirada.' },
+        { titulo: 'Tu forma de ser',                texto: 'Esa mezcla de sinceridad, ternura, seriedad, y amor que me encanta.' },
+        { titulo: 'Tu sonrisa tierna',              texto: 'Tu pequeña sonrisita cuando me dices chistes malos, siento que deja ver tu niña interior.' },
+        { titulo: 'Tus ataques de amor',            texto: 'Me encantan esos momentos inesperados donde me tomas del rostro, me llenas de besos y de cariño, siento que demuestras lo mucho que me quieres.' },
+        { titulo: 'Nuestra conexión',               texto: 'Desde la primera vez que salimos siento que se creo una conexion que a la fecha solo ha ido creciendo, es algo indescriptible.' },
+        { titulo: 'Tu amor por la tranquilidad',    texto: 'Adoro cómo valoras los momentos simples y la paz que construimos cuando estamos solos.' },
+        { titulo: 'Eres mi calma',                  texto: 'En medio de cualquier caos, día difícil o estres, verte o hablar contigo es una recarga de energia inmediata.' },
+        { titulo: 'Lo cálido de nuestro amor',      texto: 'Se siente como un abrazo profundo, de esos que te hacen sentir en calma.' },
+        { titulo: 'Tu exclusividad',                texto: 'Esa forma de darme un lugar especial en tu vida que nadie más tiene.' },
+        { titulo: 'Tu entusiasmo por estar juntos', texto: 'Como estas dispuesta para casi absolutamente todo lo que yo te proponga, me demuestra el interes que le pones a lo nuestro.' },
+        { titulo: 'Cómo me haces sentir',           texto: 'Me haces sentir que puedo ser yo mismo sin filtros. Contigo la seriedad se convierte en ganas de quererte y la pena desaparece, dándole espacio a un Samuel que le encanta demostrar lo que siente, soy la versión de mí que más me gusta ya que puedo disfrutar del querer sin reservas.' }
+      ],
 
         preguntaFinal: '¿Puedo ser tu novio?',
-        mensajeAceptacion: 'Espero esto solo sea el primer paso. ',
+        mensajeAceptacion: 'Espero que este solo sea el primer paso de una bonita historia. ',
 
         fotoFinal: 'assets/16.JPEG',
 
@@ -1003,11 +1007,11 @@
            Cada rango de intentos muestra un mensaje distinto.
         ─────────────────────────────────────────────────────────── */
         mensajeIntentos() {
-          if (this.intentos < 3) return '¿Ese botón se fue solo? Qué raro... 🤔';
-          if (this.intentos < 6) return 'Parece que el "No" no quiere que lo elijas 😏';
-          if (this.intentos < 10) return 'El universo está tratando de decirte algo... 💫';
-          if (this.intentos < 15) return '¡Perseverancia! Pero quizás hay una pista 😄';
-          return 'Okay, creo que el "No" decidió irse de vacaciones 🏖️';
+          if (this.intentos < 3) return 'El botón se movio solo? mas raro.';
+          if (this.intentos < 6) return 'Parece que el "No" no quiere que lo elijas';
+          if (this.intentos < 10) return 'Intenta presionando el si a ver.';
+          if (this.intentos < 15) return 'Perseverancia! pero ya dale al SI';
+          return 'Bueno, dele pues al "Si" y ya';
         },
       };
     }
