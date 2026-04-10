@@ -23,7 +23,7 @@ export const Hero = ({ config }) => {
 
   return (
     <motion.section
-      className="min-h-screen flex flex-col items-center justify-center px-6 py-16 relative overflow-hidden bg-yellow-300"
+      className="min-h-screen flex flex-col items-center justify-center px-6 py-16 relative overflow-hidden hero-bg-test"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
