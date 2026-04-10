@@ -29,30 +29,14 @@ jobs:
       - name: Build project
         run: npm run build
       
-      - name: Copy dist to root
-        run: |
-          cp dist/index.html index.html
-          rm -rf assets
-          cp -r dist/assets .
-      
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add index.html assets/
-          git commit -m "chore: Update compiled assets" || echo "No changes to commit"
-      
-      - name: Push changes
-        run: git push origin master || echo "No changes to push"
-
       - name: Setup Pages
         uses: actions/configure-pages@v3
-
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: '.'
-
+          path: 'dist'
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
