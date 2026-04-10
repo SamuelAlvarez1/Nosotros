@@ -5,22 +5,64 @@
     {
       "id": 1,
       "date": "15 de Enero, 2024",
-      "text": "Aquel primer café donde nuestras miradas se cruzaron. Sabía que eras especial desde ese momento.",
+      "text": "Aquel primer café donde nuestras miradas se cruzaron.",
       "imagePath": "/assets/images/memory-1.jpg",
       "type": "photo"
     },
     {
       "id": 2,
       "date": "22 de Febrero, 2024",
-      "text": "Tu risa es mi melodía favorita. Cada momento a tu lado es un regalo.",
-      "imagePath": "/assets/stickers/sticker-1.png",
-      "type": "sticker"
+      "text": "Tu risa es mi melodía favorita.",
+      "imagePath": "/assets/images/memory-2.jpg",
+      "type": "photo"
     },
     {
       "id": 3,
       "date": "14 de Marzo, 2024",
-      "text": "En tus ojos veo mi futuro. Quiero construir mil recuerdos más contigo.",
+      "text": "En tus ojos veo mi futuro.",
       "imagePath": "/assets/images/memory-3.jpg",
+      "type": "photo"
+    },
+    {
+      "id": 4,
+      "date": "30 de Marzo, 2024",
+      "text": "Cada momento a tu lado es un regalo.",
+      "imagePath": "/assets/images/memory-4.jpg",
+      "type": "photo"
+    },
+    {
+      "id": 5,
+      "date": "10 de Abril, 2024",
+      "text": "Eres el motivo de mis sonrisas.",
+      "imagePath": "/assets/images/memory-5.jpg",
+      "type": "photo"
+    },
+    {
+      "id": 6,
+      "date": "20 de Abril, 2024",
+      "text": "Contigo quiero construir mil recuerdos más.",
+      "imagePath": "/assets/images/memory-6.jpg",
+      "type": "photo"
+    },
+    {
+      "id": 7,
+      "date": "05 de Mayo, 2024",
+      "text": "Mi corazón late al ritmo de tu amor.",
+      "imagePath": "/assets/images/memory-7.jpg",
+      "type": "photo"
+    },
+    {
+      "id": 8,
+      "date": "15 de Mayo, 2024",
+      "text": "Cada día a tu lado es un sueño hecho realidad.",
+      "imagePath": "/assets/images/memory-8.jpg",
+      "type": "photo"
+    },
+    {
+      "id": 9,
+      "date": "25 de Mayo, 2024",
+      "text": "Te amo más cada día que pasa.",
+      "imagePath": "/assets/images/memory-9.jpg",
       "type": "photo"
     }
   ],

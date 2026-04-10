@@ -74,14 +74,14 @@ export const FinalQuestion = ({ config, onYes }) => {
 
         {/* Buttons container */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 justify-center items-center relative"
+          className="flex flex-col gap-6 md:gap-10 justify-center items-center relative w-full max-w-2xl"
           variants={itemVariants}
         >
-          {/* YES Button */}
+          {/* YES Button - Extra Large */}
           <motion.button
             onClick={onYes}
-            className="btn-primary w-full sm:w-auto min-w-max relative z-10"
-            whileHover={{ scale: 1.15 }}
+            className="w-full md:w-auto px-12 md:px-20 py-6 md:py-8 text-xl md:text-3xl font-bold text-white bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 rounded-2xl shadow-2xl hover:shadow-3xl relative z-10 transition-all duration-300 active:scale-95"
+            whileHover={{ scale: 1.08, boxShadow: '0 20px 40px rgba(236, 72, 153, 0.4)' }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
@@ -105,7 +105,7 @@ export const FinalQuestion = ({ config, onYes }) => {
             <button
               onMouseEnter={handleNoHover}
               onTouchStart={handleNoHover}
-              className="btn-secondary w-full sm:w-auto min-w-max cursor-not-allowed opacity-70 hover:opacity-80"
+              className="px-8 md:px-16 py-4 md:py-6 text-lg md:text-2xl font-semibold text-gray-600 bg-gray-200 rounded-xl hover:bg-gray-300 cursor-not-allowed opacity-60 transition-all duration-300"
               disabled
             >
               {config.noButtonText}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './index.css';
 import { Hero } from './components/Hero';
-import { Timeline } from './components/Timeline';
+import { Collage } from './components/Collage';
 import { FinalQuestion } from './components/FinalQuestion';
 import { SuccessScreen } from './components/SuccessScreen';
 
@@ -67,7 +67,7 @@ function App() {
     <div className="overflow-x-hidden bg-white">
       <Hero config={config} />
       {config.memories && config.memories.length > 0 && (
-        <Timeline config={config} />
+        <Collage config={config} />
       )}
       <FinalQuestion
         config={config}
