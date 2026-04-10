@@ -140,8 +140,10 @@
       display: inline-block;
       transition: transform 0.35s cubic-bezier(.22,1,.36,1),
                   box-shadow 0.35s ease;
-      cursor: default;
+      cursor: pointer;
       position: relative;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
     }
     .polaroid:hover {
       transform: scale(1.05) rotate(0deg) !important;
@@ -154,6 +156,10 @@
       object-fit: cover;
       display: block;
       border-radius: 2px;
+      transition: opacity 0.3s ease;
+    }
+    .polaroid.open > img {
+      opacity: 0.12;
     }
     .polaroid .caption {
       font-family: 'Dancing Script', cursive;
@@ -162,6 +168,29 @@
       text-align: center;
       margin-top: 10px;
       line-height: 1.3;
+    }
+
+    /* ─── Panel de detalle (aparece al hacer clic) ───────────────────── */
+    .polaroid-detail {
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 248, 250, 0.97);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 14px;
+      opacity: 0;
+      transform: scale(0.93);
+      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(.22,1,.36,1);
+      pointer-events: none;
+      border-radius: 2px;
+    }
+    .polaroid.open .polaroid-detail {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
     }
 
     /* ─── Sticker ────────────────────────────────────────────────────── */
@@ -360,10 +389,27 @@
         <!-- POLAROID -->
         <div x-show="item.tipo === 'foto'"
              class="polaroid reveal"
-             :style="`transform: rotate(${item.rotacion}deg); transition-delay: ${index * 0.08}s`"
-             :class="index % 3 === 0 ? 'mt-8' : index % 3 === 1 ? 'mt-0' : 'mt-4'">
+             :class="[
+               item.abierto ? 'open' : '',
+               index % 3 === 0 ? 'mt-8' : index % 3 === 1 ? 'mt-0' : 'mt-4'
+             ]"
+             :style="`transform: rotate(${item.abierto ? 0 : item.rotacion}deg); transition-delay: ${index * 0.08}s`"
+             @click="item.abierto = !item.abierto">
+
           <img :src="item.url" :alt="item.tituloPolaroid" loading="lazy" />
+
+          <!-- Título manuscrito siempre visible -->
           <p class="caption" x-text="item.tituloPolaroid"></p>
+
+          <!-- Panel de detalle — visible al hacer clic -->
+          <div class="polaroid-detail">
+            <span class="text-xl leading-none text-rose-300">♡</span>
+            <p class="font-sans text-gray-700 text-sm text-center leading-snug px-1"
+               x-text="item.descripcion"></p>
+            <p class="font-script text-rose-old text-base"
+               x-text="item.fecha"></p>
+            <span class="text-gray-300 text-xs mt-1">toca para cerrar</span>
+          </div>
         </div>
 
         <!-- STICKER -->
@@ -517,51 +563,149 @@
         recuerdos: [
           {
             tipo: 'foto',
-            url: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=400&q=80',
-            tituloPolaroid: 'aquel primer día ♡',
-            descripcion: 'Nuestro primer encuentro',
+            url: 'assets/1.jpg',
+            tituloPolaroid: 'el principio de todo ♡',
+            descripcion: 'El día que todo empezó. Recuerdo exactamente cómo te veías.',
+            fecha: '',
           },
           {
             tipo: 'sticker',
             url: 'https://em-content.zobj.net/source/apple/354/sparkling-heart_1f496.png',
-            tituloPolaroid: '',
-            descripcion: 'Corazón brillante',
+            tituloPolaroid: '', descripcion: '', fecha: '',
           },
           {
             tipo: 'foto',
-            url: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&q=80',
+            url: 'assets/2.JPEG',
             tituloPolaroid: 'riendo contigo',
-            descripcion: 'Momentos felices',
+            descripcion: 'Tu risa es mi canción favorita. Ese día no paré de escucharla.',
+            fecha: '',
           },
           {
             tipo: 'foto',
-            url: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80',
+            url: 'assets/4.JPEG',
             tituloPolaroid: 'nuestra aventura',
-            descripcion: 'Explorando juntos',
+            descripcion: 'Perdidos y felices. Con vos cualquier lugar se vuelve especial.',
+            fecha: '',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/6.JPEG',
+            tituloPolaroid: 'así de bien la pasamos',
+            descripcion: 'Momentos como este son los que quiero repetir para siempre.',
+            fecha: '',
           },
           {
             tipo: 'sticker',
             url: 'https://em-content.zobj.net/source/apple/354/revolving-hearts_1f49e.png',
-            tituloPolaroid: '',
-            descripcion: 'Corazones girando',
+            tituloPolaroid: '', descripcion: '', fecha: '',
           },
           {
             tipo: 'foto',
-            url: 'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=400&q=80',
+            url: 'assets/7.JPEG',
+            tituloPolaroid: 'te quedo mirando',
+            descripcion: 'No me canso de verte. Creo que nunca me voy a cansar.',
+            fecha: '',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/8.JPEG',
             tituloPolaroid: 'el atardecer que me robaste el aliento',
-            descripcion: 'Atardecer juntos',
+            descripcion: 'No sé si era el cielo o que estabas vos al lado. Creo que eras vos.',
+            fecha: '',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/9.JPEG',
+            tituloPolaroid: 'juntos y punto',
+            descripcion: 'Con vos el tiempo pasa diferente. Más rápido y más bonito.',
+            fecha: '',
           },
           {
             tipo: 'sticker',
             url: 'https://em-content.zobj.net/source/apple/354/smiling-face-with-hearts_1f970.png',
-            tituloPolaroid: '',
-            descripcion: 'Enamorado',
+            tituloPolaroid: '', descripcion: '', fecha: '',
           },
           {
             tipo: 'foto',
-            url: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&q=80',
+            url: 'assets/10.PNG',
+            tituloPolaroid: 'este momento',
+            descripcion: 'Hay fotos que valen más que mil palabras. Esta es una de esas.',
+            fecha: '',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/11.JPEG',
             tituloPolaroid: 'te encontré y todo cambió',
-            descripcion: 'Juntos y felices',
+            descripcion: 'A veces pienso en cómo sería mi vida sin haberte conocido. No me gusta esa versión.',
+            fecha: '',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/12.JPEG',
+            tituloPolaroid: 'sonrisa de las tuyas',
+            descripcion: 'Esa sonrisa me hace querer ser mejor persona todos los días.',
+            fecha: '',
+          },
+          {
+            tipo: 'sticker',
+            url: 'https://em-content.zobj.net/source/apple/354/sparkling-heart_1f496.png',
+            tituloPolaroid: '', descripcion: '', fecha: '',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/13.JPEG',
+            tituloPolaroid: 'instante favorito',
+            descripcion: 'Si pudiera elegir un momento para revivir, elegiría uno así.',
+            fecha: '',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/14.JPEG',
+            tituloPolaroid: 'tan vos',
+            descripcion: 'Auténtica, sin filtros. Así te quiero, exactamente como sos.',
+            fecha: '',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/15.JPEG',
+            tituloPolaroid: 'mi lugar favorito',
+            descripcion: 'Mi lugar favorito no es un lugar. Sos vos.',
+            fecha: '',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/16.JPEG',
+            tituloPolaroid: 'cada momento importa',
+            descripcion: 'Nada de lo que vivimos juntos me parece pequeño.',
+            fecha: '',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/17.JPEG',
+            tituloPolaroid: 'mirándonos',
+            descripcion: 'Hay una conversación entera en cada mirada tuya.',
+            fecha: '',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/18.JPEG',
+            tituloPolaroid: 'siempre vos',
+            descripcion: 'Si tuviera que elegir otra vez, te elegiría a vos.',
+            fecha: '',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/19.JPEG',
+            tituloPolaroid: 'nuestro mundo',
+            descripcion: 'Cuando estás, el mundo se achica y se vuelve exactamente del tamaño que necesito.',
+            fecha: '',
+          },
+          {
+            tipo: 'foto',
+            url: 'assets/20.JPG',
+            tituloPolaroid: 'para siempre ♡',
+            descripcion: 'Esta es la última foto... pero espero que sea solo el comienzo.',
+            fecha: '',
           },
         ],
 
@@ -576,7 +720,7 @@
         preguntaFinal:     '¿Quieres ser mi novia?',
         mensajeAceptacion: '¡Dijo que sí! 💕',
 
-        fotoFinal: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&q=80',
+        fotoFinal: 'assets/20.JPG',
 
         /* ── ESTADO INTERNO ─────────────────────────────────────── */
         respondio: false,
@@ -591,9 +735,10 @@
           this.noX = 50;
           this.noY = 20;
 
-          // Agregar rotaciones aleatorias a los recuerdos
+          // Agregar rotaciones aleatorias y estado abierto a los recuerdos
           this.recuerdos = this.recuerdos.map(r => ({
             ...r,
+            abierto: false,
             rotacion: r.tipo === 'foto'
               ? (Math.random() * 6 - 3).toFixed(2)
               : 0,
