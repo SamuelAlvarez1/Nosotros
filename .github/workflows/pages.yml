@@ -6,15 +6,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
       
@@ -24,19 +24,19 @@ jobs:
       - name: Build project
         run: npm run build
       
-      - name: Copy dist to root for GitHub Pages
+      - name: Copy compiled files to root
         run: |
           cp dist/index.html index.html
-          rm -rf assets stickers
+          rm -rf assets stickers config.json favicon.svg icons.svg
           cp -r dist/assets .
           cp -r dist/stickers . 2>/dev/null || true
           cp dist/config.json config.json
           cp dist/favicon.svg favicon.svg
           cp dist/icons.svg icons.svg
       
-      - name: Commit and push
+      - name: Commit and push compiled assets
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git diff-index --quiet HEAD || (git commit -m "chore: Deploy built assets" && git push)
+          git diff-index --quiet HEAD || (git commit -m "deploy: Compiled assets" && git push origin master)
